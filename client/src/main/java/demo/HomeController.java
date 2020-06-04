@@ -1,6 +1,6 @@
 package demo;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class HomeController {
 
-  private static final String template = "Welcome, %s!";
+    private static final String template = "Welcome, %s!";
 
-  @Value("${name:Spring}")
-  private String name;
+    private final DummyConfiguration dummyConfiguration;
 
+    @Autowired
+    public HomeController(DummyConfiguration dummyConfiguration) {
+        this.dummyConfiguration = dummyConfiguration;
+    }
 
-  @RequestMapping("/")
-  public String home() {
-    return String.format(template, name);
-  }
+    @RequestMapping("/")
+    public String home() {
+        return String.format(template, dummyConfiguration.getName());
+    }
 
 }
