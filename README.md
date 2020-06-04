@@ -1,4 +1,4 @@
-#Spring cloud demo
+# Spring cloud configuration demo
 1. Make sure that you specify a valid repo and the token
 2. Include a file on the repo named application-subversion.yml and include name: anything as in svn-repo folder
 3. Start the server 
