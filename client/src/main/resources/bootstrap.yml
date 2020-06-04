@@ -1,0 +1,15 @@
+server:
+  port: 8886
+
+spring:
+  application:
+    name: spring-cloud-demo
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh

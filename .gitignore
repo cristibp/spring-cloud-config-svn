@@ -1,0 +1,13 @@
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+
+# IntelliJ IDEA Files
+
+.idea/
+*.iml
+*.iws
+*.ipr
