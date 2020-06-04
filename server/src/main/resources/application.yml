@@ -6,7 +6,7 @@ spring:
       server:
         svn:
           uri: https://subversion.assembla.com/svn/batusel.demo/
-          passphrase: 7548b4639b0ca8bedfaf
+          passphrase: your-token
           default-label: trunk
   profiles:
     active: subversion
